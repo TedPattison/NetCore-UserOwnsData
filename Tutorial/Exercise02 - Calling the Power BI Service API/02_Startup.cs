@@ -33,7 +33,11 @@ namespace UserOwnsData {
 
 
       services
-        .AddMicrosoftWebAppAuthentication(Configuration);
+        .AddMicrosoftWebAppAuthentication(Configuration)
+        .AddMicrosoftWebAppCallsWebApi(Configuration, PowerBiServiceApi.RequiredScopes)
+        .AddInMemoryTokenCaches();
+
+      services.AddScoped(typeof(PowerBiServiceApi));
 
       var mvcBuilder = services.AddControllersWithViews(options => {
         var policy = new AuthorizationPolicyBuilder()
