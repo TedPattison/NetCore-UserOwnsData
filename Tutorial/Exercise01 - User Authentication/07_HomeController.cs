@@ -6,14 +6,15 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using UOD1.Models;
+using UserOwnsData.Models;
 
-namespace UOD1.Controllers
+namespace UserOwnsData.Controllers
 {
     [Authorize]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+
 
         public HomeController(ILogger<HomeController> logger)
         {
@@ -27,7 +28,7 @@ namespace UOD1.Controllers
             return View();
         }
 
-        public IActionResult Report()
+        public IActionResult Embed()
         {
             return View();
         }
