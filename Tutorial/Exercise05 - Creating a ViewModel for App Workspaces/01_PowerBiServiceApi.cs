@@ -38,11 +38,11 @@ namespace UserOwnsData.Services {
 				"https://analysis.windows.net/powerbi/api/Report.ReadWrite.All",
 				"https://analysis.windows.net/powerbi/api/Dataset.ReadWrite.All",
 				"https://analysis.windows.net/powerbi/api/Content.Create",
-                "https://analysis.windows.net/powerbi/api/Workspace.ReadWrite.All"
+				"https://analysis.windows.net/powerbi/api/Workspace.ReadWrite.All"
 			};
 
 		public string GetAccessToken () {
-			return this.tokenAcquisition.GetAccessTokenForUserAsync(RequiredScopes).Result;
+			return this.tokenAcquisition.GetAccessTokenForUserAsync (RequiredScopes).Result;
 		}
 
 		public PowerBIClient GetPowerBiClient () {
@@ -73,11 +73,10 @@ namespace UserOwnsData.Services {
 			if (string.IsNullOrEmpty (appWorkspaceId)) {
 				viewModel = new {
 					currentWorkspace = "My Workspace",
-						workspaces = (await pbiClient.Groups.GetGroupsAsync ()).Value,
-						datasets = (await pbiClient.Datasets.GetDatasetsAsync ()).Value,
-						reports = (await pbiClient.Reports.GetReportsAsync ()).Value,
-						dashboards = (await pbiClient.Dashboards.GetDashboardsAsync ()).Value,
-						token = accessToken
+					workspaces = (await pbiClient.Groups.GetGroupsAsync ()).Value,
+					datasets = (await pbiClient.Datasets.GetDatasetsAsync ()).Value,
+					reports = (await pbiClient.Reports.GetReportsAsync ()).Value,
+					token = accessToken
 				};
 			} else {
 				Guid workspaceId = new Guid (appWorkspaceId);
@@ -89,7 +88,6 @@ namespace UserOwnsData.Services {
 						currentWorkspaceIsReadOnly = currentWorkspace.IsReadOnly,
 						datasets = (await pbiClient.Datasets.GetDatasetsInGroupAsync (workspaceId)).Value,
 						reports = (await pbiClient.Reports.GetReportsInGroupAsync (workspaceId)).Value,
-						dashboards = (await pbiClient.Dashboards.GetDashboardsInGroupAsync (workspaceId)).Value,
 						token = accessToken
 				};
 			}

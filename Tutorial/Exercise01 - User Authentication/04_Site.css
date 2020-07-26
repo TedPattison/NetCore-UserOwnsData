@@ -125,6 +125,7 @@ i {
     background-color: #F2C811;
     border-color: #111;
     display: inline;
+    float: right;
     margin-left: 8px;
     padding-left: 6px;
     padding-right: 6px;

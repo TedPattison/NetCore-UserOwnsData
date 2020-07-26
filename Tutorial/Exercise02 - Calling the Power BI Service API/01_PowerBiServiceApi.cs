@@ -26,7 +26,6 @@ namespace UserOwnsData.Services {
 		public static readonly string[] RequiredScopes =
 		  new string[] {
 			"https://analysis.windows.net/powerbi/api/Group.Read.All",
-			"https://analysis.windows.net/powerbi/api/Dashboard.Read.All",
 			"https://analysis.windows.net/powerbi/api/Report.ReadWrite.All",
 			"https://analysis.windows.net/powerbi/api/Dataset.ReadWrite.All",
 			"https://analysis.windows.net/powerbi/api/Content.Create",

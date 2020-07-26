@@ -27,8 +27,8 @@ namespace UserOwnsData.Controllers {
     }
 
     public async Task<IActionResult> Embed(string workspaceId) {
-
       var viewModel = await powerBiServiceApi.GetEmbeddedViewModel(workspaceId);
+      // cast string value to object type in order to pass string value as  MVC view model 
       return View(viewModel as object);
     }
 

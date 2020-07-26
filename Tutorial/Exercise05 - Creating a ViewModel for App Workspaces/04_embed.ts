@@ -12,12 +12,6 @@ class Workspace {
   isReadOnly: boolean;
 }
 
-class Dashboard {
-  id: string;
-  displayName: string;
-  embedUrl: string;
-}
-
 class Report {
   id: string;
   name: string;
@@ -35,7 +29,6 @@ class ViewModel {
   currentWorkspace: string;
   currentWorkspaceIsReadOnly: boolean;
   workspaces: Workspace[];
-  dashboards: Dashboard[];
   reports: Report[];
   datasets: Dataset[];
   token: string;
@@ -47,7 +40,6 @@ $(() => {
 
   var workspaceSelector: JQuery = $("#workspace-selector");
   var workspacesList: JQuery = $("#workspaces-list");
-  var dashboardsList: JQuery = $("#dashboards-list");
   var reportsList: JQuery = $("#reports-list");
   var datasetsList: JQuery = $("#datasets-list");
 
@@ -70,20 +62,6 @@ $(() => {
       .addClass("dropdown-item");
     workspacesList.append(link);
   });
-
-  if (viewModel.dashboards.length == 0) {
-    dashboardsList.append($("<li>").text("You have no dashboards"));
-  }
-  else {
-    viewModel.dashboards.forEach((dashboard: Dashboard) => {
-      var li = $("<li>");
-      li.append($("<i>").addClass("fa fa-dashboard"));
-      li.append($("<a>", {
-        "href": "javascript:void(0);"
-      }).text(dashboard.displayName).click(() => { embedDashboard(dashboard) }));
-      dashboardsList.append(li);
-    });
-  }
 
   if (viewModel.reports.length == 0) {
     reportsList.append($("<li>").text("You have no reports"));
@@ -158,8 +136,6 @@ var embedReport = (report: Report, editMode: boolean = false) => {
   powerbi.reset(reportContainer);
   var embeddedReport: powerbi.Report = <powerbi.Report>powerbi.embed(reportContainer, config);
 
-
-
   embeddedReport.on("saved", function (event: any) {
     // check for saveAs
     if (event.detail.saveAs) {
@@ -203,42 +179,6 @@ var embedReport = (report: Report, editMode: boolean = false) => {
     });
 
   };
-
-}
-
-var embedDashboard = (dashboard: Dashboard) => {
-  $("#embedding-instructions").hide();
-
-  var viewModel: ViewModel = window['viewModel'];
-  var token: string = viewModel.token
-
-  var models = pbimodels;
-
-  var config: powerbi.IEmbedConfiguration = {
-    type: 'dashboard',
-    id: dashboard.id,
-    embedUrl: dashboard.embedUrl,
-    accessToken: token,
-    tokenType: models.TokenType.Aad,
-    pageView: "fitToWidth" // options: "actualSize", "fitToWidth", "oneColumn"
-  };
-
-  // Get a reference to the embedded report HTML element
-  var reportContainer = document.getElementById('embed-container');
-
-  var powerbi: powerbi.service.Service = window.powerbi;
-
-  // Embed the report and display it within the div container.
-  powerbi.reset(reportContainer);
-  var embeddedDashboard = powerbi.embed(reportContainer, config);
-
-  $("#breadcrumb").text("Dashboards > " + dashboard.displayName);
-  $("#embed-toolbar").show();
-  $("#toggle-edit").hide();
-  $("#full-screen").unbind("click");
-  $("#full-screen").click(function () {
-    embeddedDashboard.fullscreen();
-  });
 
 }
 
