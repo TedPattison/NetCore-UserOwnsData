@@ -3,7 +3,7 @@ This sample provides a starter web application for Power BI embedding using .NET
 
 ## :clipboard: Requirements for running this sample application.
 To run this sample application on your development workstation you must meet the following prerequisites.
-Your developer  workstation must configure to allow the execution of PowerShell scripts. Your developer workstation must also have the following software and developer tools installed.
+Your developer workstation must be configured to allow for the execution of PowerShell scripts. Your developer workstation must also have the following software and developer tools installed.
 
 - PowerShell cmdlet library for AzureAD - [download](https://docs.microsoft.com/en-us/powershell/azure/active-directory/install-adv2?view=azureadps-2.0)
 - DOTNET Core SDK 3.1 or later - [download](https://dotnet.microsoft.com/download)
@@ -12,9 +12,11 @@ Your developer  workstation must configure to allow the execution of PowerShell 
 - Visual Studio 2019 (optional) - [download](https://visualstudio.microsoft.com/downloads/)
 
 ## :scroll: Downloading and configuring this sample application.
-Once you have install the prequisite software, you must complete the following steps to run this sample application on your development workstation.
+Once you have installed the prequisite software and developer tools, you must complete the following steps to run this sample application on your development workstation.
 
  - Download the code for the **UserOwnsData** project.
+    1. Download the [ZIP archive](https://github.com/TedPattison/NetCore-UserOwnsData/archive/master.zip)  with the UserOwnsData project **or**
+    2. Run the GIT command `git clone https://github.com/TedPattison/NetCore-UserOwnsData.git`
  - Open the **UserOwnsData** project in Visual Studio Code.
  - Run the PowerShell script named [`CreateAzureADApplication.ps1`](https://github.com/TedPattison/NetCore-UserOwnsData/blob/master/CreateAzureADApplication.ps1) to create a new Azure AD application. 
  - Copy the JSON from the text file into `appsettings.json`.
