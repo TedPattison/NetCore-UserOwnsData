@@ -2,7 +2,7 @@
 This sample provides a starter web application for Power BI embedding using .NET Core 3.1 and the new Microsoft Authentication Library named `Microsoft.Identity.Web`. You can use this sample application to create your own Power BI embedding prototype.
 
 ## :clipboard: Requirements for running this sample application.
-The run this sample application on your development workstation you must meet the following prerequisites.
+To run this sample application on your development workstation you must meet the following prerequisites.
 Your developer  workstation must configure to allow the execution of PowerShell scripts. Your developer workstation must also have the following software and developer tools installed.
 
 - PowerShell cmdlet library for AzureAD - [download](https://docs.microsoft.com/en-us/powershell/azure/active-directory/install-adv2?view=azureadps-2.0)
