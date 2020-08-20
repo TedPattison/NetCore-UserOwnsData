@@ -19,7 +19,9 @@ Once you have installed the prequisite software and developer tools, you must co
     2. Run the GIT command `git clone https://github.com/TedPattison/NetCore-UserOwnsData.git`
  - Open the **UserOwnsData** project in Visual Studio Code.
  - Run the PowerShell script named [`CreateAzureADApplication.ps1`](https://github.com/TedPattison/NetCore-UserOwnsData/blob/master/CreateAzureADApplication.ps1) to create a new Azure AD application. 
- - Copy the JSON from the text file into `appsettings.json`.
+    1. When you run the open Notepad with JSON configuration data for the Azure AD application
+    2. You must copy this JSON into the clipboard for the next step 
+ - Paste the JSON configuration data for the Azure AD Application into `appsettings.json`.
  - Open the Visual Studio Code console and run these commands.
 	```	
 	npm install
