@@ -20,17 +20,12 @@ Once you have installed the prequisite software and developer tools, you must co
  - Open the **UserOwnsData** project in Visual Studio Code.
  - Run the PowerShell script named [`CreateAzureADApplication.ps1`](https://github.com/TedPattison/NetCore-UserOwnsData/blob/master/CreateAzureADApplication.ps1) to create a new Azure AD application. 
  - Copy the JSON from the text file into `appsettings.json`.
- - Open the Visual Studio Code Console and Run These Commands.
-   1. `npm install`
-   2. `npm run build`
-   3. `dotnet dev-cert https --clean` 
-   4. `dotnet dev-cert https --trust`
- - zzzzzz :monkey_face:
- - xxx :cat:
- - zzz :unicorn:
- - xxxx :camel:
- - xxx :penguin:
- - xxxx :guitar:
- - xxxx :trumpet:
- - xxx :bulb:
- - ssss ::
+ - Open the Visual Studio Code console and run these commands.
+	```	
+	npm install
+	npm run build
+	dotnet dev-cert https --clean 
+	dotnet dev-cert https --trust
+	dotnet restore
+	dotnet run
+	```
