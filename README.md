@@ -14,7 +14,13 @@ Your developer  workstation must configure to allow the execution of PowerShell 
 ## Downloading and configuring this sample application.
 Once you have install the prequisite software, you must complete the following steps to run this sample application on your development workstation.
 
- - Download the the UserOwnsData project folder with the code.
- - Open the UserOwnsData project in Visual Studio Code.
+ - Download the code for the **UserOwnsData** project.
+ - Open the **UserOwnsData** project in Visual Studio Code.
  - Run the PowerShell script named [`CreateAzureADApplication.ps1`](https://github.com/TedPattison/NetCore-UserOwnsData/blob/master/CreateAzureADApplication.ps1) to create a new Azure AD application. 
- - 
+ - Copy the JSON from the text file into `appsettings.json`.
+ - Open the Visual Studio Code Console and Run These Commands.
+   1. `npm install`
+   2. `npm run build`
+   3. `dotnet dev-cert https --clean` 
+   4. `dotnet dev-cert https --trust`
+ - zzzzzz
