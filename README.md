@@ -23,4 +23,4 @@ Once you have install the prequisite software, you must complete the following s
    2. `npm run build`
    3. `dotnet dev-cert https --clean` 
    4. `dotnet dev-cert https --trust`
- - zzzzzz
+ - zzzzzz :sunglasses:
