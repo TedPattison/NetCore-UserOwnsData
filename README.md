@@ -28,3 +28,5 @@ Once you have install the prequisite software, you must complete the following s
  - zzz :unicorn:
  - xxxx :camel:
  - xxx :penguin:
+ - xxxx :guitar:
+ - xxxx :trumpet:
