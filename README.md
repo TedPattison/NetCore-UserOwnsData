@@ -1,4 +1,4 @@
-# .NET Core User-Owns-Data Sample
+# :monkey_face: .NET Core User-Owns-Data Sample
 This sample provides a starter web application for Power BI embedding using .NET Core 3.1 and the new Microsoft Authentication Library named `Microsoft.Identity.Web`. You can use this sample application to create your own Power BI embedding prototype.
 
 ## :monkey_face: Requirements for running this sample application.
@@ -30,3 +30,5 @@ Once you have install the prequisite software, you must complete the following s
  - xxx :penguin:
  - xxxx :guitar:
  - xxxx :trumpet:
+ - xxx :bulb:
+ - ssss ::
