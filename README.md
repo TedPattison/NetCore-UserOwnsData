@@ -16,5 +16,5 @@ Once you have install the prequisite software, you must complete the following s
 
  - Download the the UserOwnsData project folder with the code.
  - Open the UserOwnsData project in Visual Studio Code.
- - Run the PowerShell script named [`CreateAzureADApplication.ps1`]() to create a new Azure AD application. 
+ - Run the PowerShell script named [`CreateAzureADApplication.ps1`](https://github.com/TedPattison/NetCore-UserOwnsData/blob/master/CreateAzureADApplication.ps1) to create a new Azure AD application. 
  - 
